@@ -122,7 +122,7 @@ export const tokens = (mode) => ({
 
 // mui theme setings
 export const themeSettings = (mode) => {
-    const colors = token(mode);
+    const colors = tokens(mode);
 
     return {
         palette: {
