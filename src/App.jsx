@@ -1,16 +1,21 @@
-import { useState } from 'react'
-
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseliner, ThemeProvider } from "@mui/material";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, colorMode] = useMode();
 
   return (
     <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseliner />
+          <div className="app">
+            <main className="content"></main>
+          </div>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
