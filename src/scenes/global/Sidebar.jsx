@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
+import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -34,7 +35,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const ProSidebar = () => {
+const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -60,7 +61,7 @@ const ProSidebar = () => {
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed}>
+      <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -95,7 +96,7 @@ const ProSidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/dp.jpg`}
+                  src={`../../assets/user.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -106,10 +107,10 @@ const ProSidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Muhammad Mutahir
+                  Ed Roh
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Program Coordinator at ETL Online
+                  VP Fancy Admin
                 </Typography>
               </Box>
             </Box>
@@ -219,7 +220,7 @@ const ProSidebar = () => {
             />
           </Box>
         </Menu>
-      </Sidebar>
+      </ProSidebar>
     </Box>
   );
 };
