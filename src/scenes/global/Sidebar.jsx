@@ -80,7 +80,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  Nav Bar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -94,8 +94,8 @@ const Sidebar = () => {
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="130px"
-                  height="150px"
+                  width="200px"
+                  height="250px"
                   src={`../../assets/dp.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
